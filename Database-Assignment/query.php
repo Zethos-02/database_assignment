@@ -13,12 +13,10 @@ include 'config.php'
 
 <?php
     //read query
-   $query = "SELECT * FROM 'incident' WHERE Size >= '$_POST[num]'";
-   $query2 = "SELECT * FROM 'location'";
+   $query = "SELECT incident.Incident_ID, location.Location, location.Region, incident.Sector, incident.Size FROM `incident` INNER JOIN `location` ON incident.Region_ID=location.Region_ID WHERE Size>='$_POST[num]'";
 
     //Run the query
     $result = mysqli_query($link, $query);
-    $result2 = mysqli_query($link, $query2);
 
     if(mysqli_query($link, $query))
     {

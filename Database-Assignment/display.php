@@ -83,24 +83,27 @@ include 'config.php'
                     <table cellspacing="0" cellpadding="1" border="1" width=auto>
                         <tr>
                             <th>ID</th>
-                            <th>Location</th>
-                            <th>Region</th>
                             <th>Sector</th>
                             <th>Size</th>
+                            <th>Location</th>
+                            <th>Region</th>
                         </tr>
 
                     <?php
-                        while($row = mysqli_fetch_array($result))
+                        //read query
+                        $query = "SELECT incident.Incident_ID, incident.Sector, incident.Size, location.Location, location.Region FROM `incident` INNER JOIN `location` ON incident.Region_ID=location.Region_ID WHERE Size>=5000";
+
+                        //Run the query
+                        $result = mysqli_query($link, $query);
+
+                        while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
                         {
                             echo "<td><input type=number name=ID value='" . $row['Incident_ID'] . "'></td>";
-                            echo "<td><input type=number name=RegionID value='" . $row['Region_ID'] . "'></td>";
-                            $query3 = "SELECT * FROM 'location' WHERE 'Region ID' = '$_POST[RegionID]'";
-                            $result3 = mysqli_query($link, $query3);
-                            $row3 = mysqli_fetch_array($result3);
-                            echo "<td><input type=text name=Location value='" . $row3['Location'] . "'></td>";
-                            echo "<td><input type=text name=Region value='" . $row3['Region'] . "'></td>";
-                            echo "<td><input type=text name=Sector='" . $row['Sector'] . "'></td>";
-                            echo "<td><input type=number name=Size='" . $row['Size'] . "'></td>";
+                            echo "<td><input type=text name=Sector value='" . $row['Sector'] . "'></td>";
+                            echo "<td><input type=text name=Size value='" . $row['Size'] . "'></td>";
+                            echo "<td><input type=text name=Location value='" . $row['Location'] . "'></td>";
+                            echo "<td><input type=text name=Region value='" . $row['Region'] . "'></td>";
+                            echo "</form></tr>";
                         }
                     ?>    
                 </div>  
