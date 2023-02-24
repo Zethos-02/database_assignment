@@ -1,0 +1,12 @@
+INSERT INTO `location` (`Region_ID`, `Location`, `Region`) VALUES (1, 'East Midlands', 'Midlands');
+INSERT INTO `location` (`Region_ID`, `Location`, `Region`) VALUES (2, 'Eastern', 'South Of England');
+INSERT INTO `location` (`Region_ID`, `Location`, `Region`) VALUES (3, 'London', 'London');
+INSERT INTO `location` (`Region_ID`, `Location`, `Region`) VALUES (4, 'North East', 'North Of England');
+INSERT INTO `location` (`Region_ID`, `Location`, `Region`) VALUES (5, 'North West', 'North Of England');
+INSERT INTO `location` (`Region_ID`, `Location`, `Region`) VALUES (6, 'Northern Ireland', 'Northern Ireland');
+INSERT INTO `location` (`Region_ID`, `Location`, `Region`) VALUES (7, 'Scotland', 'Scotland');
+INSERT INTO `location` (`Region_ID`, `Location`, `Region`) VALUES (8, 'South East', 'South Of England');
+INSERT INTO `location` (`Region_ID`, `Location`, `Region`) VALUES (9, 'South West ', 'South Of England');
+INSERT INTO `location` (`Region_ID`, `Location`, `Region`) VALUES (10, 'Wales', 'Wales');
+INSERT INTO `location` (`Region_ID`, `Location`, `Region`) VALUES (11, 'West Midlands', 'Midlands');
+INSERT INTO `location` (`Region_ID`, `Location`, `Region`) VALUES (12, 'Yorkshire and Humberside', 'North Of England');
